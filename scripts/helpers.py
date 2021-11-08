@@ -62,10 +62,10 @@ def get_direction_matrix_for_navigation(mdp, policy):
     
     return color_matrix, value_matrix
 
-def plot_navigation_policy(mdp, policy):
+def plot_navigation_policy(mdp, policy, figsize=(8, 8)):
     color_matrix, value_matrix = get_direction_matrix_for_navigation(mdp, policy)
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=figsize)
     ax.matshow(color_matrix, cmap=plt.cm.Blues, alpha=0.3)
 
     for y in range(len(value_matrix)):
